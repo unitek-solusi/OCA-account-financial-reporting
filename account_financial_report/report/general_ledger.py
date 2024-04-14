@@ -655,7 +655,7 @@ class GeneralLedgerReport(models.AbstractModel):
                     "code": accounts_data[acc_id]["code"],
                     "name": accounts_data[acc_id]["name"],
                     "type": "account",
-                    "currency_id": accounts_data[acc_id]["currency_id"],
+                    "currency_id": accounts_data[acc_id]["currency_id"].id if accounts_data[acc_id]["currency_id"] else False,
                     "centralized": accounts_data[acc_id]["centralized"],
                     "grouped_by": grouped_by,
                 }
